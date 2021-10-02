@@ -1,4 +1,4 @@
-export function convertCharToBinaryString(char: string) {
+export function convertCharToBinaryString(char: string): string {
   if (char.length > 1) {
     throw new Error(`char must be 1 in length: ${char.length} was provided`)
   }
@@ -16,6 +16,13 @@ export function convertCharToBinaryString(char: string) {
   }
 
   return convertedString
+}
+
+export function convertAsciiStringToBinaryString(string: string): string {
+  return string
+    .split("")
+    .map((char) => convertCharToBinaryString(char))
+    .join(" ")
 }
 
 export function convertAsciiToOnBits(ascii: number): number {

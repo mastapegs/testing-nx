@@ -12,5 +12,7 @@ describe('convertToBits', () => {
     expect(convertStringToBits("ABB")).toEqual(6);
     expect(convertStringToBits("ABCD")).toEqual(9);
     expect(convertStringToBits("ABAB")).toEqual(8);
+    expect(convertStringToBits("Matthew Pagan")).toEqual(47);
+    expect(convertStringToBits("Thomas Anderson")).toEqual(60);
   });
 });

@@ -1,6 +1,29 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "convert-to-bits": {
+      "root": "libs/convert-to-bits",
+      "sourceRoot": "libs/convert-to-bits/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/convert-to-bits/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/convert-to-bits"],
+          "options": {
+            "jestConfig": "libs/convert-to-bits/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

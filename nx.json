@@ -29,6 +29,9 @@
   "projects": {
     "convert-to-bits": {
       "tags": []
+    },
+    "node-bit-convert": {
+      "tags": []
     }
   }
 }

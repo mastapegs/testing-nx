@@ -1,6 +1,16 @@
-import { convertStringToBits, convertAsciiToOnBits } from './convert-to-bits';
+import { convertStringToBits, convertAsciiToOnBits, convertCharToBinaryString } from './convert-to-bits';
 
 describe('convertToBits', () => {
+  it('should convert character to binary string', () => {
+    const testString = 'ABC'
+    const templateExpectation = `char must be 1 in length: ${testString.length} was provided`
+    expect(() => convertCharToBinaryString(testString)).toThrow(templateExpectation)
+    
+    expect(convertCharToBinaryString('A')).toEqual('01000001')
+    expect(convertCharToBinaryString('B')).toEqual('01000010')
+    expect(convertCharToBinaryString('C')).toEqual('01000011')
+  })
+  
   it('should correctly convert an ascii code to on bit representation', () => {
     expect(convertAsciiToOnBits(65)).toEqual(2)
     expect(convertAsciiToOnBits(66)).toEqual(2)

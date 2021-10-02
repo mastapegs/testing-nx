@@ -1,3 +1,23 @@
+export function convertCharToBinaryString(char: string) {
+  if (char.length > 1) {
+    throw new Error(`char must be 1 in length: ${char.length} was provided`)
+  }
+
+  let ascii = char.charCodeAt(0) 
+  let convertedString = ''
+
+  for (let i = 7; i >= 0; i--) {
+    if (ascii / Math.pow(2, i) >= 1) {
+      convertedString += '1'
+      ascii %= Math.pow(2, i)
+    } else {
+      convertedString += '0'
+    }
+  }
+
+  return convertedString
+}
+
 export function convertAsciiToOnBits(ascii: number): number {
   let onCount = 0;
   let numberInProgress = ascii;
